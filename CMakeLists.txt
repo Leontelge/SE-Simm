@@ -21,6 +21,7 @@ qt_add_executable(Simmulation
     steuerelement.h steuerelement.cpp
     profil.h profil.cpp
     modus.h modus.cpp
+    drehsensor.h drehsensor.cpp
 )
 
 target_link_libraries(Simmulation
