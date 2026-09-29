@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include "steuerelement.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,5 +20,6 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
     w.show();
+    Steuerelement Zentralsteuerung;
     return a.exec();
 }

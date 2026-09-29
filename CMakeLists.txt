@@ -11,15 +11,16 @@ qt_add_executable(Simmulation
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    haus.h haus.cpp
-    etage.h etage.cpp
+
+
     raum.h raum.cpp
     wetterstation.h wetterstation.cpp
     sensorbox.h sensorbox.cpp
     fenster.h fenster.cpp
     UI.ui
-
-
+    steuerelement.h steuerelement.cpp
+    profil.h profil.cpp
+    modus.h modus.cpp
 )
 
 target_link_libraries(Simmulation
