@@ -22,11 +22,6 @@ qt_add_executable(Simmulation
 
 )
 
-qt_add_translations(
-    TARGETS Simmulation
-    TS_FILES Simmulation_de_DE.ts
-)
-
 target_link_libraries(Simmulation
     PRIVATE
         Qt::Core
