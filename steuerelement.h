@@ -7,9 +7,12 @@
 #include "wetterstation.h"
 
 #define ANZAHL_RAUME 255
+#define ANZAHL_PROFILE 128
 
-class Steuerelement
+class Steuerelement : public QObject
 {
+protected:
+    profil* profile[ANZAHL_PROFILE];
 public:
     Steuerelement();
 
@@ -21,7 +24,10 @@ public:
     profil profil_erstellen();
     wetterstation get_wetterstation();
 
+    int time;
+    QTimer* Timer;
 
+    void onTimerTimeout();
 };
 
 #endif // STEUERELEMENT_H

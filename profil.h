@@ -5,19 +5,18 @@
 #include <QTimer>
 #include <iostream>
 
-#define LOOP_DURR 255
+#define LOOP_Length 255
 
 class profil : public QObject
 {
 private:
-    int timer_ID;
     std::string Name;
 public:
     QTimer* Timer;
     // in 1sekunde/1000
     int looptime;
 
-
+    int looptimes[LOOP_Length];
 
     int Zielposition;
     int sollwert_licht;
@@ -33,6 +32,9 @@ public:
     profil(std::string name);
 protected:
     void onTimerTimeout();
+    //fügt zu den array looptimes eine zeit hinten an (time in sek)
+    void add_time(int time);
+    void remove_time(int index);
 };
 
 #endif // PROFIL_H

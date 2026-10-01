@@ -11,6 +11,24 @@ profil::profil(std::string name) {
 }
 
 void profil::onTimerTimeout() {
-    std::cout << "Timer Expired in Profil"<< Name << std::endl;
+    Timer->stop();
+    std::cout << "Timer Expired in Profil "<< Name << std::endl;
     //beispiel!!!!
+}
+
+void profil::add_time(int time) {
+    int i = 0;
+    while(looptimes[i] != 0 && i <= LOOP_Length-1) {
+        i++;
+    }
+    if(i != LOOP_Length-1) {
+        looptimes[i] = time*1000;
+    }
+}
+
+void profil::remove_time(int index) {
+    int i = index;
+    while(looptimes[i] != 0 && i < LOOP_Length-1) {
+        looptimes[i] = looptimes[i+1];
+    }
 }
