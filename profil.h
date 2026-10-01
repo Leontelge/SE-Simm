@@ -1,16 +1,25 @@
 #ifndef PROFIL_H
 #define PROFIL_H
 
-#include <QTime>
+#include <Qobject>
+#include <QTimer>
+#include <iostream>
 
 #define LOOP_DURR 255
 
-class profil
+class profil : public QObject
 {
+private:
+    int timer_ID;
+    std::string Name;
 public:
-    QTime timer;
-    QTime Zeitpunkt[LOOP_DURR];
-    int Zielposition[LOOP_DURR];
+    QTimer* Timer;
+    // in 1sekunde/1000
+    int looptime;
+
+
+
+    int Zielposition;
     int sollwert_licht;
     int sollwert_co2;
     int sollwert_temp;
@@ -21,7 +30,9 @@ public:
     int cmp_temp(int temp);
     int cmp_feucht(int feucht);
 
-    profil();
+    profil(std::string name);
+protected:
+    void onTimerTimeout();
 };
 
 #endif // PROFIL_H
